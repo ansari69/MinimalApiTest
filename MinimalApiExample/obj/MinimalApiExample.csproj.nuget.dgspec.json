@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\c# asp project\\2\\Minimal web API Poject\\MinimalApiExample\\MinimalApiExample\\MinimalApiExample.csproj": {}
+    "E:\\c# asp project\\2\\Minimal web api test project2\\MinimalApiTest\\MinimalApiExample\\MinimalApiExample.csproj": {}
   },
   "projects": {
-    "E:\\c# asp project\\2\\Minimal web API Poject\\MinimalApiExample\\MinimalApiExample\\MinimalApiExample.csproj": {
+    "E:\\c# asp project\\2\\Minimal web api test project2\\MinimalApiTest\\MinimalApiExample\\MinimalApiExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\c# asp project\\2\\Minimal web API Poject\\MinimalApiExample\\MinimalApiExample\\MinimalApiExample.csproj",
+        "projectUniqueName": "E:\\c# asp project\\2\\Minimal web api test project2\\MinimalApiTest\\MinimalApiExample\\MinimalApiExample.csproj",
         "projectName": "MinimalApiExample",
-        "projectPath": "E:\\c# asp project\\2\\Minimal web API Poject\\MinimalApiExample\\MinimalApiExample\\MinimalApiExample.csproj",
+        "projectPath": "E:\\c# asp project\\2\\Minimal web api test project2\\MinimalApiTest\\MinimalApiExample\\MinimalApiExample.csproj",
         "packagesPath": "C:\\Users\\PC-DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\c# asp project\\2\\Minimal web API Poject\\MinimalApiExample\\MinimalApiExample\\obj\\",
+        "outputPath": "E:\\c# asp project\\2\\Minimal web api test project2\\MinimalApiTest\\MinimalApiExample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
