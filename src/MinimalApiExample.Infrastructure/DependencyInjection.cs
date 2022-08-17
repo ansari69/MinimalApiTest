@@ -22,7 +22,7 @@ namespace MinimalApiExample.Infrastructure
                    configuration.GetConnectionString("AppConnectionString"),
                    m => m.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName));
             });
-
+            services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
 
 
 
