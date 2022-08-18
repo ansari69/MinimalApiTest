@@ -14,7 +14,8 @@
     <Folder Include="Common\Middlewares\" />
     <Folder Include="Common\Models\" />
     <Folder Include="Common\Validators\" />
-    <Folder Include="Common\Profiles\" />
+    <Folder Include="NewFolder\" />
+    <Folder Include="Products\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
