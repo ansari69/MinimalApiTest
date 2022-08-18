@@ -1,4 +1,7 @@
+using MediatR;
 using MinimalApiExample.Application;
+using MinimalApiExample.Application.Common.Interfaces;
+using MinimalApiExample.Domain.Entities;
 using MinimalApiExample.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +31,8 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
+
+
     var forecast = Enumerable.Range(1, 5).Select(index =>
        new WeatherForecast
        (
@@ -41,7 +46,6 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast");
 
 app.MapGet("/test", () => "Hello World!");
-
 
 app.Run();
 

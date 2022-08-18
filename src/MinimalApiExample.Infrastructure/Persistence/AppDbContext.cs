@@ -27,5 +27,11 @@ namespace MinimalApiExample.Infrastructure.Persistence
             base.OnModelCreating(modelBuilder);
         }
 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+
     }
 }
