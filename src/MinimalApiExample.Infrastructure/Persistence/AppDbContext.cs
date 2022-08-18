@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MinimalApiExample.Application.Common.Interfaces;
+using MinimalApiExample.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,12 @@ namespace MinimalApiExample.Infrastructure.Persistence
            : base(options)
         { }
 
+        public DbSet<Product> Products { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //getting configuratons for entities that are being executed
+            //getting configuratons
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(modelBuilder);
