@@ -1,6 +1,10 @@
 using MediatR;
 using MinimalApiExample.Application;
 using MinimalApiExample.Application.Common.Interfaces;
+using MinimalApiExample.Application.Products.Commands.DeleteProduct;
+using MinimalApiExample.Application.Products.Commands.UpsertProduct;
+using MinimalApiExample.Application.Products.Queries.GetProducts;
+using MinimalApiExample.Application.Products.Queries.GetSingleProduct;
 using MinimalApiExample.Domain.Entities;
 using MinimalApiExample.Infrastructure;
 
@@ -23,6 +27,36 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.MapDelete("/product/{id}", async (string id, IMediator mediator) =>
+{
+    var response = await mediator.Send(new DeleteProductCommand() { ProductId = id });
+
+    return response;
+});
+
+app.MapGet("/product/{id}", async (string id, IMediator mediator) =>
+{
+    var response = await mediator.Send(new GetSingleProductQuery() { ProductId = id });
+
+    return response;
+});
+
+app.MapPost("/products", async (GetProductsQuery model, IMediator mediator) =>
+{
+    var response = await mediator.Send(model);
+
+    return response;
+});
+
+app.MapPost("/product/upsert", async (UpsertProductCommand model, IMediator mediator) =>
+{
+    var response = await mediator.Send(model);
+
+    return response;
+});
+
 
 
 app.Run();
