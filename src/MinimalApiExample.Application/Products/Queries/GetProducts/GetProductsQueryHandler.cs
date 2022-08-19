@@ -6,11 +6,6 @@ using MinimalApiExample.Application.Common.Helpers;
 using MinimalApiExample.Application.Common.Interfaces;
 using MinimalApiExample.Application.Common.Models;
 using MinimalApiExample.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MinimalApiExample.Application.Products.Queries.GetProducts
 {

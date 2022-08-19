@@ -29,8 +29,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-app.MapGet("/test", () => "Hello World!");
-
 app.MapDelete("/product/{id}", async (string id, IMediator mediator) =>
 {
     var response = await mediator.Send(new DeleteProductCommand() { ProductId = id });
