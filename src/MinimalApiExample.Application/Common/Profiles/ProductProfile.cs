@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MinimalApiExample.Application.Common.Models;
 using MinimalApiExample.Application.Products.Commands.UpsertProduct;
 using MinimalApiExample.Domain.Entities;
 using System;
@@ -14,6 +15,8 @@ namespace MinimalApiExample.Application.Common.Profiles
         public ProductProfile()
         {
             CreateMap<UpsertProductCommand, Product>();
+            CreateMap<Product, ProductVM>();
+
         }
     }
 }

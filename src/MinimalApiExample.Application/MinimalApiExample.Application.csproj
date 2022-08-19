@@ -12,10 +12,8 @@
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Helpers\" />
     <Folder Include="Common\Middlewares\" />
-    <Folder Include="Common\Models\" />
     <Folder Include="Common\Validators\" />
     <Folder Include="NewFolder\" />
-    <Folder Include="Products\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
