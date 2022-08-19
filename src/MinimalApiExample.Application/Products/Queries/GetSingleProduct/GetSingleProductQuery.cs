@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MinimalApiExample.Application.Products.Queries.GetSingleProduct
 {
-    public class GetSingleProductCommand : IRequest<ProductVM>
+    public class GetSingleProductQuery : IRequest<ProductVM>
     {
         public string ProductId { get; set; }
 
