@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Common\Behaviours\" />
     <Folder Include="Common\Contracts\" />
-    <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Middlewares\" />
     <Folder Include="Common\Validators\" />
     <Folder Include="NewFolder\" />
