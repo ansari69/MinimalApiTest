@@ -1,6 +1,10 @@
 using MediatR;
 using MinimalApiExample.Application;
 using MinimalApiExample.Application.Common.Interfaces;
+using MinimalApiExample.Application.Products.Commands.DeleteProduct;
+using MinimalApiExample.Application.Products.Commands.UpsertProduct;
+using MinimalApiExample.Application.Products.Queries.GetProducts;
+using MinimalApiExample.Application.Products.Queries.GetSingleProduct;
 using MinimalApiExample.Domain.Entities;
 using MinimalApiExample.Infrastructure;
 
@@ -24,32 +28,37 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-
-
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-       new WeatherForecast
-       (
-           DateTime.Now.AddDays(index),
-           Random.Shared.Next(-20, 55),
-           summaries[Random.Shared.Next(summaries.Length)]
-       ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
 
 app.MapGet("/test", () => "Hello World!");
 
-app.Run();
-
-internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
+app.MapDelete("/product/{id}", async (string id, IMediator mediator) =>
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+    var response = await mediator.Send(new DeleteProductCommand() { ProductId = id });
+
+    return response;
+});
+
+app.MapGet("/product/{id}", async (string id, IMediator mediator) =>
+{
+    var response = await mediator.Send(new GetSingleProductQuery() { ProductId = id });
+
+    return response;
+});
+
+app.MapPost("/products", async (GetProductsQuery model, IMediator mediator) =>
+{
+    var response = await mediator.Send(model);
+
+    return response;
+});
+
+app.MapPost("/product/upsert", async (UpsertProductCommand model, IMediator mediator) =>
+{
+    var response = await mediator.Send(model);
+
+    return response;
+});
+
+
+
+app.Run();

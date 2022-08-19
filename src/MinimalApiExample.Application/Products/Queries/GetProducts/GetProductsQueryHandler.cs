@@ -46,14 +46,6 @@ namespace MinimalApiExample.Application.Products.Queries.GetProducts
                 }
             }
 
-            //Filter By Date
-            if (request.FromDate != null)
-                products = products.Where(e => e.CreateDate.Date >= request.FromDate.Value.Date);
-            if (request.ToDate != null)
-                products = products.Where(e => e.CreateDate.Date <= request.ToDate.Value.Date);
-            if (request.ExactDate != null)
-                products = products.Where(e => e.CreateDate.Date == request.ExactDate.Value.Date);
-
             //get total pages
             var totalPage = products.TotalPagesCount(request.EachPerPage);
             var totalResult = products.Count();

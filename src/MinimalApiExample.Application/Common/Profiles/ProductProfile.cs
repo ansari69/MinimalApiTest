@@ -14,7 +14,10 @@ namespace MinimalApiExample.Application.Common.Profiles
     {
         public ProductProfile()
         {
-            CreateMap<UpsertProductCommand, Product>();
+            CreateMap<UpsertProductCommand, Product>()
+               .ForMember(a => a.ProductId, b => b.MapFrom(c => c.ProductId))
+            .ForAllMembers(opt => opt.Condition((src, dist, srcMember) => srcMember != null && srcMember != ""));
+
             CreateMap<Product, ProductVM>();
 
         }

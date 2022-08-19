@@ -15,8 +15,5 @@ namespace MinimalApiExample.Application.Products.Queries.GetProducts
         public string SearchValue { get; set; } = "";
         public string SortBy { get; set; } = "";
         public bool SortByDescending { get; set; } = false;
-        public DateTime? FromDate { get; set; }
-        public DateTime? ToDate { get; set; }
-        public DateTime? ExactDate { get; set; }
     }
 }
