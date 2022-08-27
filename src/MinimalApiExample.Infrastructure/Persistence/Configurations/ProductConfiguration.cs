@@ -20,6 +20,13 @@ namespace MinimalApiExample.Infrastructure.Persistence.Configurations
 
             builder.Property(e => e.Description)
                 .IsRequired();
+
+            // Category
+            builder.HasOne(e => e.Category)
+                .WithMany(v => v.Products)
+                .IsRequired(false)
+                .HasForeignKey(e => e.CategoryId);
+
         }
     }
 }

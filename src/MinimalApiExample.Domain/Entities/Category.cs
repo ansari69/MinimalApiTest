@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace MinimalApiExample.Domain.Entities
 {
-    public class Product
+    public class Category
     {
-        public Product()
+        public Category()
         {
 
         }
 
-        public string ProductId { get; set; }
+        public string CategoryId { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public DateTime CreateDate { get; set; }
         public bool? IsActive { get; set; }
 
-        public string CategoryId { get; set; }
-        public Category Category { get; set; }
+        public IList<Product> Products { get; set; }
+
 
     }
 }
