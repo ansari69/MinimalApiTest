@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Common\Behaviours\" />
     <Folder Include="Common\Contracts\" />
     <Folder Include="Common\Middlewares\" />
     <Folder Include="Common\Validators\" />
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>
