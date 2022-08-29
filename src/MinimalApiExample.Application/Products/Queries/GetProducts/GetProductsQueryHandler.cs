@@ -27,7 +27,11 @@ namespace MinimalApiExample.Application.Products.Queries.GetProducts
             if (!String.IsNullOrEmpty(request.SearchValue))
                 products = products.Where(c => c.Name.ToString().Contains(request.SearchValue)
                     || c.Description.Contains(request.SearchValue));
-                    
+
+            // Filter by CategoryId
+            if (!String.IsNullOrEmpty(request.CategoryId))
+                products = products.Where(e => e.CategoryId == request.CategoryId);
+
 
             if (!String.IsNullOrEmpty(request.SortBy))
             {
