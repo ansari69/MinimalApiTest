@@ -15,5 +15,9 @@ namespace MinimalApiExample.Application.Products.Queries.GetProducts
         public string SearchValue { get; set; } = "";
         public string SortBy { get; set; } = "";
         public bool SortByDescending { get; set; } = false;
+
+        public string CategoryId { get; set; }
+
+
     }
 }
